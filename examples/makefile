@@ -7,6 +7,7 @@ FILES :=                    \
     Coverage2               \
     Coverage3               \
     IsPrime                 \
+    IsPrimeT                \
     Exceptions              \
     Types                   \
     Operators               \

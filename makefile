@@ -6,9 +6,6 @@ all:
 clean:
 	cd examples; make clean
 
-clone:
-	git clone git@github.com:gpdowning/oopl-jpl.git
-
 config:
 	git config -l
 
@@ -59,6 +56,7 @@ sync:
     --include "Coverage2.py"               \
     --include "Coverage3.py"               \
     --include "IsPrime.py"                 \
+    --include "IsPrimeT.py"                \
     --include "Exceptions.py"              \
     --include "Types.py"                   \
     --include "Operators.py"               \
