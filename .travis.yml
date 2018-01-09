@@ -1,0 +1,34 @@
+sudo: false
+
+language: python
+
+python:
+   - "3.6"
+
+before_install:
+    - cat .travis.yml
+    - pip install --upgrade pip
+    - pip --version
+
+install:
+    - pip install coverage
+    - pip install mypy
+    - pip install pylint
+    - pip install numpy
+    - pip list
+    - git       --version
+    - make      --version
+    - python3.6 --version
+    - mypy      --version
+    - pylint    --version
+    - coverage  --version
+
+before_script:
+    - uname -a
+    - printenv | sort
+
+script:
+    - date
+    - ls -al
+    - cat makefile
+    - make travis
