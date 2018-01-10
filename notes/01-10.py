@@ -62,10 +62,42 @@ x + ?
 # tuple's + is NOT okay with any iterable on the right-hand-side
 # it must be another tuple
 
+for v in range(2, 5) :
+    print(v)           # 2 3 4
 
+# this is what's really happening
 
+p = iter(range(2, 5))
+try :
+    while True :
+        v = next(p)
+        print(v)
+except StopIteration :
+    pass
 
+p = iter(range(2, 5))
+print(type(p))        # range iterator
+print(next(p))        # 2
+print(next(p))        # 3
+print(next(p))        # 4
+print(next(p))        # StopIteration exception
 
+def add (x, y) :
+    return x + y
+
+def mul (x, y) :
+    return x * y
+
+"""
+reduce takes three arguments
+first  argument: is a binary function
+second argument: an iterable
+third  argument: a value
+"""
+
+def factorial_range_reduce (n: int) -> int :
+    assert n >= 0
+    return reduce(lambda x, y : x * y, range(1, n + 1), 1)
 
 
 

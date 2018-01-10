@@ -61,10 +61,15 @@ sync:
     --include "Types.py"                   \
     --include "Operators.py"               \
     --include "Variables.py"               \
+    --include "Factorial.py"               \
+    --include "FactorialT.py"              \
     --include "Cache.py"                   \
     --include "Copy.py"                    \
-    --include "Factorial.py"               \
     --include "Reduce.py"                  \
+    --include "Iteration.py"               \
+    --include "Comprehensions.py"          \
+    --include "Iterables.py"               \
+    --include "Yield.py"                   \
     --exclude "*"                          \
     ../../examples/python/ examples
 

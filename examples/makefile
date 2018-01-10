@@ -12,9 +12,15 @@ FILES :=                    \
     Types                   \
     Operators               \
     Variables               \
+    Factorial               \
+    FactorialT              \
     Cache                   \
     Copy                    \
-    Reduce
+    Reduce                  \
+    Iteration               \
+    Comprehensions          \
+    Iterables               \
+    Yield
 
 .pylintrc:
 	pylint --disable=locally-disabled --reports=no --generate-rcfile > $@
