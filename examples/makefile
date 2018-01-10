@@ -14,8 +14,7 @@ FILES :=                    \
     Variables               \
     Cache                   \
     Copy                    \
-    Factorial               \
-    Reduce1
+    Reduce
 
 .pylintrc:
 	pylint --disable=locally-disabled --reports=no --generate-rcfile > $@
