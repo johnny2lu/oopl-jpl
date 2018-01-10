@@ -64,7 +64,7 @@ sync:
     --include "Cache.py"                   \
     --include "Copy.py"                    \
     --include "Factorial.py"               \
-    --include "Reduce1.py"                 \
+    --include "Reduce.py"                  \
     --exclude "*"                          \
     ../../examples/python/ examples
 
