@@ -61,6 +61,10 @@ sync:
     --include "Types.py"                   \
     --include "Operators.py"               \
     --include "Variables.py"               \
+    --include "Cache.py"                   \
+    --include "Copy.py"                    \
+    --include "Factorial.py"               \
+    --include "Reduce1.py"                 \
     --exclude "*"                          \
     ../../examples/python/ examples
 

@@ -11,7 +11,11 @@ FILES :=                    \
     Exceptions              \
     Types                   \
     Operators               \
-    Variables
+    Variables               \
+    Cache                   \
+    Copy                    \
+    Factorial               \
+    Reduce1
 
 .pylintrc:
 	pylint --disable=locally-disabled --reports=no --generate-rcfile > $@
