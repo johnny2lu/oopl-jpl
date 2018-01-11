@@ -17,10 +17,16 @@ FILES :=                    \
     Cache                   \
     Copy                    \
     Reduce                  \
+    ReduceT                 \
     Iteration               \
     Comprehensions          \
     Iterables               \
-    Yield
+    Yield                   \
+    Map                     \
+    FileInputOutput         \
+    FormattedOutput         \
+    RangeIterator           \
+    Range
 
 .pylintrc:
 	pylint --disable=locally-disabled --reports=no --generate-rcfile > $@

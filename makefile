@@ -66,10 +66,16 @@ sync:
     --include "Cache.py"                   \
     --include "Copy.py"                    \
     --include "Reduce.py"                  \
+    --include "ReduceT.py"                 \
     --include "Iteration.py"               \
     --include "Comprehensions.py"          \
     --include "Iterables.py"               \
     --include "Yield.py"                   \
+    --include "Map.py"                     \
+    --include "FileInputOutput.py"         \
+    --include "FormattedOutput.py"         \
+    --include "RangeIterator.py"           \
+    --include "Range.py"                   \
     --exclude "*"                          \
     ../../examples/python/ examples
 
