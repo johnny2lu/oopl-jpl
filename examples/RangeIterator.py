@@ -8,10 +8,7 @@
 # RangeIterator.py
 # ----------------
 
-def f (b, e) :
-    return iter(range(b, e))
-
-def test () -> None :
+def test (f) -> None :
     p = f(2, 2)
     assert p is iter(p)
     try :
@@ -42,5 +39,5 @@ def test () -> None :
 
 if __name__ == "__main__" : # pragma: no cover
     print("RangeIterator.py")
-    test()
+    test(lambda b, e : iter(range(b, e)))
     print("Done.")

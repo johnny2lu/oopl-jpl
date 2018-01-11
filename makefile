@@ -72,6 +72,7 @@ sync:
     --include "Iterables.py"               \
     --include "Yield.py"                   \
     --include "Map.py"                     \
+    --include "MapT.py"                    \
     --include "FileInputOutput.py"         \
     --include "FormattedOutput.py"         \
     --include "RangeIterator.py"           \

@@ -155,6 +155,50 @@ x = dict()
 assert reduce(concat, b, "") == "nothing to be done." # expensive
 assert "".join(b)            == "nothing to be done." # much, much cheaper
 
+def f () :
+    print("abc")
+    yield 2
+    print("def")
+    yield 3
+    print("ghi")
+    yield 4
+
+v = f()                       # prints nothing
+print(type(v))                # generator
+print(hasattr(f, "__next__")) # true
+print(hasattr(f, "__iter__")) # true
+p = iter(f)
+print(p is f)                 # true
+
+w = next(v) # abc
+print(w)    # 2
+w = next(v) # def
+print(w)    # 3
+w = next(v) # ghi
+print(w)    # 4
+w = next(v) # raise StopIteration
+
+v = f()
+for w in v :
+    print(w) # 2 3 4
+
+% FileInputOutput.py
+
+x = map(...)
+print(type(x))  # map
+
+x = range(2, 5)
+print(type(x))  # range
+print(list(x))  # [2, 3, 4]
+print(list(x))  # [2, 3, 4]
+
+p = iter(x)
+print(type(x))      # range iterator
+print(p is iter(p)) # true
+print(list(p))      # [2, 3, 4]
+print(list(p))      # []
+
+
 
 
 

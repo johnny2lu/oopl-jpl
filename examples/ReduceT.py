@@ -66,7 +66,7 @@ class MyUnitTests (TestCase) :
     def test_4 (self) :
         for f in self.a :
             with self.subTest(msg=f.__name__) :
-                self.assertEqual(f(None, [], 2),  2)
+                self.assertEqual(f(None, {}, 2),  2)
 
 if __name__ == "__main__" : # pragma: no cover
     main()

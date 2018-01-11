@@ -23,6 +23,7 @@ FILES :=                    \
     Iterables               \
     Yield                   \
     Map                     \
+    MapT                    \
     FileInputOutput         \
     FormattedOutput         \
     RangeIterator           \

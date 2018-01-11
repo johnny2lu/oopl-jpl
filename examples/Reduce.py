@@ -18,7 +18,7 @@ def test () -> None :
     assert reduce(add,    [2, 3, 4],       0)  == 9
     assert reduce(mul,    {2, 3, 4},       1)  == 24
     assert reduce(concat, ("a", "b", "c"), "") == "abc"
-    assert reduce(None,   [],              2)  == 2
+    assert reduce(None,   {},              2)  == 2
 
 if __name__ == "__main__" : # pragma: no cover
     print("Reduce1.py")
