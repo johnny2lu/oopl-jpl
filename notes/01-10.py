@@ -99,23 +99,75 @@ def factorial_range_reduce (n: int) -> int :
     assert n >= 0
     return reduce(lambda x, y : x * y, range(1, n + 1), 1)
 
+x     = (2, 3, 4)
+x[1] += 1          # not ok
 
+x    = (2, [3], 4)
+x[1] = [1]         # not ok
 
+x[1] += [1]        # ok!!!
 
+print(x)           # (2, [3, 1], 4)
 
+x = [2, 3, 4]
+y = x
 
+x += [5]
 
+print(x is y) # true
 
+x = (2, 3, 4)
+y = (2, 3, 4)
+print(x is y) # false
 
+class A :
+    def f (self) :
+        ...
 
+    def __iter__ (self) :
+        ...
 
+    def __getitem__ (self, i) :
+        ...
 
+x = A()              # my type
+x.f()
+p = iter(x)          # this means A is iterable
+p = x.__iter__()     # p = iter(x) really means
+v = x[5]
+v = x.__getitem__(5) # v = x[5] really means
 
+a = [2, 3, 4]
+b = a[:]      # copy, NOT the same as b = a
+print(a is b) # false
 
+a = (2, 3, 4)
+b = a[:]      # copy, the same b = a
+print(a is b) # true
 
+x = [2, 3, 4]
+print(type(x))                # list
+print(hasattr(x, "__next__")) # false
 
+p = iter(x)
+print(type(p))                # list iterator
+print(hasattr(p, "__next__")) # true
 
+for v in [(2, 3), (4, 5), (6, 7)] :
+    print(v)                        # (2, 3) (4, 5) (6, 7)
 
+for u, v in [(2, 3), (4, 5), (6, 7)] :
+    print(u)                           # 2 4 6
+    print(v)                           # 3 5 7
 
+for u, v in z : # z has to be an iterable of iterables of length 2
+    ...
 
+for u, _, w, _ in z :
+    ...
 
+print([2, 3, 4] == [2, 3, 4]) # true
+print([2, 3, 4] == [2, 4, 3]) # false
+
+print({2, 3, 4} == {2, 3, 4}) # true
+print({2, 3, 4} == {2, 4, 3}) # true
