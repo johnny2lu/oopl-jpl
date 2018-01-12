@@ -197,39 +197,3 @@ print(type(x))      # range iterator
 print(p is iter(p)) # true
 print(list(p))      # [2, 3, 4]
 print(list(p))      # []
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
