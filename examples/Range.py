@@ -45,6 +45,11 @@ def test () -> None :
     assert list(x) == [2, 3, 4]
     assert list(x) == [2, 3, 4]
 
+    x = range(2, 5)
+    assert x[0] == 2
+    assert x[1] == 3
+    assert x[2] == 4
+
 if __name__ == "__main__" : # pragma: no cover
     print("Range.py")
     test()

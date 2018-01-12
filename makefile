@@ -77,6 +77,11 @@ sync:
     --include "FormattedOutput.py"         \
     --include "RangeIterator.py"           \
     --include "Range.py"                   \
+    --include "FunctionKeywords.py"        \
+    --include "FunctionDefaults.py"        \
+    --include "FunctionUnpacking.py"       \
+    --include "FunctionTuple.py"           \
+    --include "FunctionDict.py"            \
     --exclude "*"                          \
     ../../examples/python/ examples
 

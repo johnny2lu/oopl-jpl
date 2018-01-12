@@ -27,7 +27,12 @@ FILES :=                    \
     FileInputOutput         \
     FormattedOutput         \
     RangeIterator           \
-    Range
+    Range                   \
+    FunctionKeywords        \
+    FunctionDefaults        \
+    FunctionUnpacking       \
+    FunctionTuple           \
+    FunctionDict
 
 .pylintrc:
 	pylint --disable=locally-disabled --reports=no --generate-rcfile > $@
