@@ -17,8 +17,8 @@ def test () -> None :
     assert reduce(add, [2, 3, 4],  0) == 9
     assert reduce(mul, [2, 3, 4],  1) == 24
 
-    assert reduce(add, [2, 3, 4])     == 9
-    assert reduce(mul, [2, 3, 4])     == 24
+    assert reduce(add, {2, 3, 4})     == 9
+    assert reduce(mul, {2, 3, 4})     == 24
 
     assert reduce(None, [],        2) == 2
     assert reduce(None, [2])          == 2
