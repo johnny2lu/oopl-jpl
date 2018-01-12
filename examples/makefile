@@ -34,6 +34,7 @@ FILES :=                    \
     FunctionUnpacking       \
     FunctionTuple           \
     FunctionDict            \
+    Reduce2                 \
     Classes                 \
     Complex
 

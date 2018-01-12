@@ -83,6 +83,7 @@ sync:
     --include "FunctionUnpacking.py"       \
     --include "FunctionTuple.py"           \
     --include "FunctionDict.py"            \
+    --include "Reduce2.py"                 \
     --include "Classes.py"                 \
     --include "Complex.py"                 \
     --exclude "*"                          \
