@@ -86,26 +86,60 @@ two contexts
     a function definition
 """
 
+print(2, end=" ")
 
+def f (a, b, *c) :
+    if c == () :
+    if not c :
 
+def f (a, b, c = None) :
+    if c == None :
 
+f(2, 3)
+f(2, 3, 4)
+f(2, 3, None)
 
+# instance variable
 
+class A :
+    def __init__ (self, v) :
+        self.v = v           # instance variable
 
+x = A(2)
+print(x.v) # 2
 
+y = A(3)
+print(y.v) # 3
 
+# instance variable
 
+class A :
+    def f (self, v) :
+        self.v = v    # instance variable
 
+x = A()
+print(x.v) # not ok
+x.f(2)
+print(x.v) # 2
 
+y = A()
+print(y.v) # not ok
 
+# class variable
 
+class A :
+    v = 2
 
+print(A.v) # 2
 
+class A :
+    cv = 5
 
+    def __init__ (self, v) :
+        self.v = v
 
+    @staticmethod
+    def sm (w) :
+        ...
 
-
-
-
-
-
+A.sm(2)

@@ -5,22 +5,22 @@
 # pylint: disable = invalid-name
 # pylint: disable = missing-docstring
 
-# ----------
-# Reduce1.py
-# ----------
+# ---------
+# Reduce.py
+# ---------
 
 # https://docs.python.org/3.6/library/functools.html
 
 from functools import reduce
-from operator  import add, concat, mul
+from operator  import add, mul, sub
 
 def test () -> None :
-    assert reduce(add,    [2, 3, 4],       0)  == 9
-    assert reduce(mul,    {2, 3, 4},       1)  == 24
-    assert reduce(concat, ("a", "b", "c"), "") == "abc"
-    assert reduce(None,   {},              2)  == 2
+    assert reduce(add,  [2, 3, 4], 0) == 9
+    assert reduce(mul,  (2, 3, 4), 1) == 24
+    assert reduce(sub,  {2, 3, 4}, 2) == -7
+    assert reduce(None, [],        3) == 3
 
 if __name__ == "__main__" : # pragma: no cover
-    print("Reduce1.py")
+    print("Reduce.py")
     test()
     print("Done.")

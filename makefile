@@ -84,6 +84,7 @@ sync:
     --include "FunctionTuple.py"           \
     --include "FunctionDict.py"            \
     --include "Reduce2.py"                 \
+    --include "Reduce2T.py"                \
     --include "Classes.py"                 \
     --include "Complex.py"                 \
     --exclude "*"                          \

@@ -12,17 +12,11 @@
 # https://docs.python.org/3.6/library/functools.html
 
 from functools import reduce
-from operator  import add, concat, mul
-from typing    import Callable, Iterable, Sequence, TypeVar
+from operator  import add, mul, sub
+from typing    import Callable, Iterable, TypeVar
 from unittest  import main, TestCase
 
 T = TypeVar("T")
-
-def reduce_for_range (bf: Callable[[T, T], T], a: Sequence[T], v: T) -> T :
-    for i in range(len(a)) :
-        w = a[i]
-        v = bf(v, w)
-    return v
 
 def reduce_for (bf: Callable[[T, T], T], a: Iterable[T], v: T) -> T :
     for w in a :
@@ -42,7 +36,6 @@ def reduce_while (bf: Callable[[T, T], T], a: Iterable[T], v: T) -> T :
 class MyUnitTests (TestCase) :
     def setUp (self) :
         self.a = [
-            reduce_for_range,
             reduce_for,
             reduce_while,
             reduce]
@@ -55,18 +48,17 @@ class MyUnitTests (TestCase) :
     def test_2 (self) :
         for f in self.a :
             with self.subTest(msg=f.__name__) :
-                if f != reduce_for_range :
-                    self.assertEqual(f(mul, {2, 3, 4}, 1), 24)
+                self.assertEqual(f(mul, (2, 3, 4), 1), 24)
 
     def test_3 (self) :
         for f in self.a :
             with self.subTest(msg=f.__name__) :
-                self.assertEqual(f(concat, ("a", "b", "c"), ""), "abc")
+                self.assertEqual(f(sub, {2, 3, 4}, 2), -7)
 
     def test_4 (self) :
         for f in self.a :
             with self.subTest(msg=f.__name__) :
-                self.assertEqual(f(None, {}, 2),  2)
+                self.assertEqual(f(None, [], 3),  3)
 
 if __name__ == "__main__" : # pragma: no cover
     main()
