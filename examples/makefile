@@ -27,6 +27,7 @@ FILES :=                    \
     FileInputOutput         \
     FormattedOutput         \
     RangeIterator           \
+    RangeIteratorT          \
     Range                   \
     FunctionKeywords        \
     FunctionDefaults        \

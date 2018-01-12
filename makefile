@@ -76,6 +76,7 @@ sync:
     --include "FileInputOutput.py"         \
     --include "FormattedOutput.py"         \
     --include "RangeIterator.py"           \
+    --include "RangeIteratorT.py"          \
     --include "Range.py"                   \
     --include "FunctionKeywords.py"        \
     --include "FunctionDefaults.py"        \
