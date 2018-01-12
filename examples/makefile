@@ -32,7 +32,9 @@ FILES :=                    \
     FunctionDefaults        \
     FunctionUnpacking       \
     FunctionTuple           \
-    FunctionDict
+    FunctionDict            \
+    Classes                 \
+    Complex
 
 .pylintrc:
 	pylint --disable=locally-disabled --reports=no --generate-rcfile > $@

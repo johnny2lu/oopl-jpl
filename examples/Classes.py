@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+
+# pylint: disable = bad-whitespace
+# pylint: disable = invalid-name
+# pylint: disable = missing-docstring
+# pylint: disable = no-member
+# pylint: disable = protected-access
+
+# ----------
+# Classes.py
+# ----------
+
+print("Classes.py")
+
+class A :
+    __cv = 0 # private
+
+    def __init__ (self) :
+        A.__cv    += 1
+        self.__iv  = 0 # private
+#       cm()           # NameError: name 'cm' is not defined
+        A.cm()
+#       sm()           # NameError: name 'sm' is not defined
+        A.sm()
+#       im()           # NameError: name 'im' is not defined
+        self.im()
+
+    @classmethod
+    def cm (cls) :     # cls might be bound to a child type
+        A.__cv    += 1
+        cls.__cv  += 1
+#       sm()           # NameError: name 'sm' is not defined
+        A.sm()
+        cls.sm()
+#       self.__iv += 1 # NameError: name 'self' is not defined
+#       self.im()      # NameError: name 'self' is not defined
+
+    @staticmethod
+    def sm () :
+        A.__cv    += 1
+#       cm()           # NameError: name 'cm' is not defined
+#       A.cm()
+#       self.__iv += 1 # NameError: global name 'self' is not defined
+#       self.im()      # NameError: global name 'self' is not defined
+
+    def im (self) :
+        A.__cv    += 1
+        self.__iv += 1
+#       cm()           # NameError: name 'cm' is not defined
+        A.cm()
+        self.cm()      # misleading
+#       sm()           # NameError: name 'sm' is not defined
+        A.sm()
+        self.sm()      # misleading
+
+# assert A.__cv == 0 # AttributeError: type object 'A' has no attribute '__cv'
+# assert A._A__cv == 0 # mypy error: "A" has no attribute "_A__cv"
+
+A.cm()
+A.sm()
+#A.im() # TypeError: im() missing 1 required positional argument: 'self'
+
+x = A()
+# assert x.__iv == 1   # AttributeError: 'A' object has no attribute '__iv'
+# assert x._A__iv == 1 # mypy error: "A" has no attribute "_A__iv"; maybe "__iv"?
+x.cm()                 # misleading
+x.sm()                 # misleading
+
+x.im()
+A.im(x) # methods are really just functions
+
+m = map(A.im, [A(), A(), A()])
+
+print("Done.")
