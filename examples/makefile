@@ -37,7 +37,8 @@ FILES :=                    \
     Reduce2                 \
     Reduce2T                \
     Classes                 \
-    Complex
+    Complex                 \
+    ComplexT
 
 .pylintrc:
 	pylint --disable=locally-disabled --reports=no --generate-rcfile > $@

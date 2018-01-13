@@ -87,6 +87,7 @@ sync:
     --include "Reduce2T.py"                \
     --include "Classes.py"                 \
     --include "Complex.py"                 \
+    --include "ComplexT.py"                \
     --exclude "*"                          \
     ../../examples/python/ examples
 
